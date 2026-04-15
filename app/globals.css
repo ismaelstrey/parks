@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+:root {
+  --cyan: #00e5ff;
+  --cyan-dim: #00b8cc;
+  --green-neon: #00ff88;
+  --orange-neon: #ff6b00;
+  --red-neon: #ff3355;
+  --bg-deep: #020d1a;
+  --bg-panel: #04192e;
+  --bg-card: #061e35;
+  --bg-input: #071f30;
+  --border: rgba(0, 229, 255, 0.18);
+  --border-hover: rgba(0, 229, 255, 0.5);
+  --text: #c8e8f8;
+  --text-dim: #5a88a8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: var(--bg-deep);
+  color: var(--text);
+  font-family: 'Rajdhani', sans-serif;
+  min-height: 100vh;
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 229, 255, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 229, 255, 0.6);
+}
+
+/* Grid background */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgba(0, 229, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Corner decorations */
+.corner-tl::before,
+.corner-br::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+}
+.corner-tl::before {
+  top: 0;
+  left: 0;
+  border-top: 1px solid var(--cyan);
+  border-left: 1px solid var(--cyan);
+}
+.corner-br::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 1px solid var(--cyan);
+  border-right: 1px solid var(--cyan);
+}
+
+/* Script output syntax highlight */
+.script-line-comment { color: #4a6a88; }
+.script-line-keyword { color: var(--cyan); }
+.script-line-value { color: #ffd580; }
+.script-line-string { color: #ff9f7f; }
+.script-line-normal { color: #7ee8b8; }
